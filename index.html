@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b57d0" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <title>Auto-Farben-Tracker</title>
+</head>
+<body>
+  <header class="topbar">
+    <h1>Auto-Farben-Tracker</h1>
+    <div class="top-actions">
+      <button id="undoBtn" class="btn secondary" type="button">Undo</button>
+      <button id="resetBtn" class="btn danger" type="button">Reset</button>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-tab="count" role="tab" aria-selected="true">Zählen</button>
+    <button class="tab" data-tab="stats" role="tab" aria-selected="false">Auswertung</button>
+  </nav>
+
+  <main class="container">
+    <section id="count" class="panel active" role="tabpanel">
+      <div class="chip" id="totalChip">Gesamt: 0</div>
+      <div id="grid" class="grid" aria-label="Farben zum Zählen"></div>
+      <p class="hint">Tipp: Wenn ihr euch verzählt, nutzt „Undo“.</p>
+    </section>
+
+    <section id="stats" class="panel" role="tabpanel">
+      <div class="chip" id="totalChip2">Gesamt: 0</div>
+
+      <h2>Top 3 Farben</h2>
+      <div id="top3" class="top3"></div>
+
+      <h2>Alle Farben</h2>
+      <div id="list" class="list"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Offline + Auto-Speichern aktiv ✅</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
